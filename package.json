@@ -1,0 +1,25 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "CLI for getting weather",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "weather"
+  ],
+  "author": "Havrylenko Ivan",
+  "license": "ISC",
+  "homepage": "https://github.com/gavrylenkoIvan/weather-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavrylenkoIvan/weather-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/gavrylenkoIvan/weather-cli",
+    "email": "havrylenko.inbox@gmail.com"
+  }
+}
