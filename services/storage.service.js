@@ -1,12 +1,23 @@
 import { homedir } from "os";
 import { join } from "path";
 import { promises } from "fs";
+import { getWeather } from "./api.service.js";
+import { printError } from "./log.service.js";
 
 const filePath = join(homedir(), "weather-data.json");
 
 const TOKEN_DICTIONARY = {
     token: "token",
     city: "city",
+};
+
+const saveCity = async (city) => {
+    try {
+        await getWeather(city);
+        saveKeyValue(TOKEN_DICTIONARY.city, city);
+    } catch (e) {
+        return;
+    }
 };
 
 const saveKeyValue = async (key, value) => {
@@ -39,4 +50,4 @@ const isExist = async (path) => {
     }
 };
 
-export { saveKeyValue, getKeyValue, TOKEN_DICTIONARY };
+export { saveKeyValue, getKeyValue, TOKEN_DICTIONARY, saveCity };

@@ -20,4 +20,15 @@ const printHelp = () => {
     );
 };
 
-export { printError, printSuccess, printHelp };
+const printWeather = (res, icon) => {
+    console.log(
+        dedent`${chalk.bgYellow(" WEATHER ")} Weather in ${res.name}
+        ${icon}  ${res.weather[0].description}
+        Temperature: ${res.main.temp} (feels like ${res.main.feels_like})
+        Humidity: ${res.main.humidity}
+        Wind speed: ${res.wind.speed}
+        `
+    );
+};
+
+export { printError, printSuccess, printHelp, printWeather };
